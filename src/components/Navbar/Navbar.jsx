@@ -2,11 +2,13 @@ import React from 'react'
 import { AppBar, Toolbar, IconButton, Stack, Button } from '@mui/material'
 import Typography from '@mui/material/Typography';
 import WaterDropOutlinedIcon from '@mui/icons-material/WaterDropOutlined';
+import CartWidget from '../CartWidget/CartWidget.jsx';
 import './navbar.css';
+
 
 function Navbar() {
   return (
-    <AppBar position="fixed" className='appbar'>
+    <AppBar className='appbar'>
         <Toolbar>
             <IconButton
                 size="large"
@@ -19,8 +21,10 @@ function Navbar() {
             </IconButton>
 
             <Typography variant="h6" component="div" color="primary" sx={{ flexGrow: 1 }}>
-                Nombre de la Tienda
+                Wattery
             </Typography>
+
+            <CartWidget />
 
             <Stack direction="row" spacing={2}>
                 <Button variant="outlined" className='blackButton'>Productos</Button>
