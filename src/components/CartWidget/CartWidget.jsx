@@ -18,7 +18,7 @@ const CartWidget = () => {
                 size="large"
                 edge="start"
                 aria-label="menu"
-                color='primary'
+                color='inherit'
                 sx={{ mr: 2 }}
             >
                 <ShoppingCartOutlinedIcon />

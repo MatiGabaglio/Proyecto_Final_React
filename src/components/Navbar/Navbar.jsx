@@ -3,6 +3,7 @@ import { AppBar, Toolbar, IconButton, Stack, Button } from '@mui/material'
 import Typography from '@mui/material/Typography';
 import WaterDropOutlinedIcon from '@mui/icons-material/WaterDropOutlined';
 import CartWidget from '../CartWidget/CartWidget.jsx';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -18,16 +19,18 @@ function Navbar() {
                 <WaterDropOutlinedIcon />
             </IconButton>
 
-            <Typography variant="h6" component="div" color="inherit" sx={{ flexGrow: 1 }}>
-                The plant Store
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                <Link to="/" underline="none" color="inherit">
+                    The All Store
+                </Link>
             </Typography>
 
             <CartWidget />
 
             <Stack direction="row" spacing={2}>
-                <Button variant="outlined" color="inherit">Productos</Button>
-                <Button variant="outlined" color="inherit">Quienes somos</Button>
-                <Button variant="outlined" color="inherit">Contacto</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/">Productos</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/AboutPage">Quienes somos</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/ContactPage">Contacto</Button>
                 <Button variant="contained" color="primary">Login</Button>
             </Stack>
 
