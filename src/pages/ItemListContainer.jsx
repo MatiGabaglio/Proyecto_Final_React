@@ -1,15 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar.jsx'
-import ItemListContainer from '../components/ItemListContainer/ItemListContainer.jsx'
 import ItemList from '../components/ItemList/ItemList.jsx'
 
-const HomePage = () => {
+const ItemListContainer = () => {
   return (
     <div>  
         <Navbar />
-        <ItemListContainer />
+        <ItemList />
     </div>
   )
 }
 
-export default HomePage
+export default ItemListContainer

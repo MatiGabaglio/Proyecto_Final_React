@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <AppBar className='appbar'>
+    <AppBar >
         <Toolbar>
             <IconButton
                 size="large"
@@ -29,8 +29,10 @@ function Navbar() {
 
             <Stack direction="row" spacing={2}>
                 <Button variant="outlined" color="inherit" component={Link} to="/">Productos</Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/AboutPage">Quienes somos</Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/ContactPage">Contacto</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/ElectronicaPage">Electronica</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/RopaDeHombrePage">Ropa de hombre</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/RopaDeMujerPage">Ropa de mujer</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/JoyeriaPage">joyeria</Button>
                 <Button variant="contained" color="primary">Login</Button>
             </Stack>
 

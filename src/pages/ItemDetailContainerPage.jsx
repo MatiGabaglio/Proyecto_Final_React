@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import ItemCard from '../components/ItemCard/ItemCard.jsx';
 import Navbar from '../components/Navbar/Navbar.jsx';
 
-const ItemPage = () => {
+const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
     let { id } = useParams();
 
@@ -22,4 +22,4 @@ const ItemPage = () => {
     )
 }
 
-export default ItemPage
+export default ItemDetailContainer

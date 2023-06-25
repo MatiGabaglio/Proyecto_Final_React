@@ -8,19 +8,30 @@ import Typography from '@mui/material/Typography';
 
 const ItemCard = ( {items} ) => {
   return (
-    <Card sx={{ maxWidth: 345, Height: 500 }}>
+    <Card sx={{ maxWidth: 345, Height: 400 }}>
       <CardMedia
         sx={{ height: 240 }}
         image={items.image}
         title={items.title}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {items.title}
+        <Typography 
+          gutterBottom 
+          variant="h5" 
+          component="div" 
+          textAlign={'left'}
+        >
+            {items.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary" >
-          {items.description}
+
+        <Typography 
+          variant="body2" 
+          color="text.secondary" 
+          textAlign={'left'} 
+        >
+          {items.category}
         </Typography>
+        
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
@@ -30,4 +41,4 @@ const ItemCard = ( {items} ) => {
   );
 }
 
-export default ItemCard;
+export default ItemCard;3
