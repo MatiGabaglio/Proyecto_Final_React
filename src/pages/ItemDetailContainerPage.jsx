@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ItemCard from '../components/ItemCard/ItemCard.jsx';
-import Navbar from '../components/Navbar/Navbar.jsx';
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
@@ -16,7 +15,6 @@ const ItemDetailContainer = () => {
 
     return (
         <div style ={{display: "flex", justifyContent: "center", marginTop :"100px"}}>
-            <Navbar />
             <ItemCard items={item} />
         </div>
     )

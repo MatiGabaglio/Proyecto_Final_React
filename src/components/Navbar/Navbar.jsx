@@ -28,11 +28,11 @@ function Navbar() {
             <CartWidget />
 
             <Stack direction="row" spacing={2}>
-                <Button variant="outlined" color="inherit" component={Link} to="/">Productos</Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/ElectronicaPage">Electronica</Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/RopaDeHombrePage">Ropa de hombre</Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/RopaDeMujerPage">Ropa de mujer</Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/JoyeriaPage">joyeria</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/" >Productos</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/category/electronics">Electronica</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/category/men's clothing">Ropa de hombre</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/category/women's clothing">Ropa de mujer</Button>
+                <Button variant="outlined" color="inherit" component={Link} to='/category/jewelery'>joyeria</Button>
                 <Button variant="contained" color="primary">Login</Button>
             </Stack>
 
