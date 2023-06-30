@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ItemCard from '../components/ItemCard/ItemCard.jsx';
-import Navbar from '../components/Navbar/Navbar.jsx';
 
-const ItemPage = () => {
+const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
     let { id } = useParams();
 
@@ -16,10 +15,9 @@ const ItemPage = () => {
 
     return (
         <div style ={{display: "flex", justifyContent: "center", marginTop :"100px"}}>
-            <Navbar />
             <ItemCard items={item} />
         </div>
     )
 }
 
-export default ItemPage
+export default ItemDetailContainer
