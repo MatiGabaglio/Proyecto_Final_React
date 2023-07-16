@@ -20,19 +20,18 @@ function Navbar() {
             </IconButton>
 
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                <Link to="/" underline="none" color="inherit">
-                    The All Store
+                <Link to="/" color="inherit" style={{ textDecoration: 'none' }}>
+                    The Muisic Store
                 </Link>
             </Typography>
 
             <CartWidget />
 
             <Stack direction="row" spacing={2}>
-                <Button variant="outlined" color="inherit" component={Link} to="/" >Productos</Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/category/electronics">Electronica</Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/category/men's clothing">Ropa de hombre</Button>
-                <Button variant="outlined" color="inherit" component={Link} to="/category/women's clothing">Ropa de mujer</Button>
-                <Button variant="outlined" color="inherit" component={Link} to='/category/jewelery'>joyeria</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/">Productos</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/category/Cuerda">Cuerda</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/category/Viento">Viento</Button>
+                <Button variant="outlined" color="inherit" component={Link} to="/category/Percucion">Percucion</Button>
                 <Button variant="contained" color="primary">Login</Button>
             </Stack>
 
