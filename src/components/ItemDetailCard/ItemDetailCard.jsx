@@ -5,9 +5,24 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import './ItemDetailCard.css';
+import '../ItemDetailCard/ItemDetailCard.css';
+import BasicSelect from '../SelectQuantity/SelectQuantity.jsx';
 
 const ItemDetailCard = ( {data} ) => {
+
+  const [cantidadSeleccionada, setCantidadSeleccionada] = React.useState(1);
+  const handleCantidadChange = (event) => {
+    setCantidadSeleccionada(event.target.value);
+  };
+
+  const agregarAlCarrito = () => {
+    const carritoActual = JSON.parse(localStorage.getItem('carrito')) || [];
+    const productoConCantidad = { ...data, cantidad: cantidadSeleccionada };
+    carritoActual.push(productoConCantidad);
+    localStorage.setItem('carrito', JSON.stringify(carritoActual));
+    alert('Producto agregado al carrito');
+  };
+
   return (
     <Card className="itemDetailCard-grid">
       <CardMedia
@@ -44,18 +59,25 @@ const ItemDetailCard = ( {data} ) => {
         </Typography>
 
         <Typography 
-          variant="body1" 
+          variant="h5" 
           color="text.secondary" 
           textAlign={'left'} 
-          paddingTop={'10px'}
+          paddingTop={'100px'}
         >
-          {data.Precio}
+          $ {data.Precio}
         </Typography>
         
       </CardContent>
       <CardActions className='button-position'>
-        <Button size="medium">Saber mas</Button>
-        <Button size="medium">agregar al carrito</Button>
+        <Button size="medium"
+        onClick={agregarAlCarrito}
+        >
+          agregar al carrito
+        </Button>
+        <BasicSelect
+          value={cantidadSeleccionada}
+          onChange={handleCantidadChange}
+        />
       </CardActions>
     </Card>
   );

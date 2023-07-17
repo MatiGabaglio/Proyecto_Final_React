@@ -2,10 +2,12 @@ import React from 'react'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Icon } from '@mui/material'
 import Badge from '@mui/material/Badge';
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
   return (
     <div>
+    <Link to="/compra" style={{ textDecoration: 'none', color: 'inherit' }}>
         <Badge 
         badgeContent={4} 
         color="primary"
@@ -24,6 +26,7 @@ const CartWidget = () => {
                 <ShoppingCartOutlinedIcon />
             </Icon>
         </Badge>
+        </Link>
     </div>
   )
 }

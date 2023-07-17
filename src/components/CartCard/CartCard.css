@@ -1,0 +1,36 @@
+.itemDetailCartCard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 75px;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: inset 0 0 10px black;
+    max-height: 275px;
+}
+
+.img-position-CartCard {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: stretch;
+  }
+
+.titulo-position-CartCard {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    place-self: left;
+}
+
+.button-position-CartCard {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    place-self: left;
+}

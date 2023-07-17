@@ -3,6 +3,7 @@ import ItemCard from '../components/ItemCard/ItemCard.jsx';
 import { Link, useParams } from 'react-router-dom';
 import { db } from '../Firebase/FirebaseConfig.js'
 import { collection, query, getDocs, where } from 'firebase/firestore';  
+import "../components/ItemList/itemList.css"
 
 function ItemCategoryPage() {
   const { categoryId } = useParams();
@@ -22,7 +23,7 @@ function ItemCategoryPage() {
   },[categoryId])
 
   return (
-    <div>
+    <div className='Item_list'>
     {Items.map((item) => {
       return (
         <div key={item.id}>
