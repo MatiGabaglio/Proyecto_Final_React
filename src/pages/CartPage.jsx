@@ -17,7 +17,7 @@ function CartPage() {
             const docRef = await addDoc(collection(db, "compras"), {
             productos: carritoActual
           });
-            alert('La compra se ha enviado correctamente a Firestore.');
+            alert("La compra se ha enviado correctamente a Firestore. El ID de tu compra es: " + docRef.id);
             localStorage.removeItem('carrito');
         } catch (error) {
             console.error('Error al enviar los datos a Firestore:', error);

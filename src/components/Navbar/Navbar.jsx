@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppBar, Toolbar, IconButton, Stack, Button } from '@mui/material'
 import Typography from '@mui/material/Typography';
-import WaterDropOutlinedIcon from '@mui/icons-material/WaterDropOutlined';
+import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
 import CartWidget from '../CartWidget/CartWidget.jsx';
 import { Link } from 'react-router-dom';
 
@@ -16,11 +16,11 @@ function Navbar() {
                 color="inherit"
                 sx={{ mr: 2 }}
             >
-                <WaterDropOutlinedIcon />
+                <MusicNoteOutlinedIcon />
             </IconButton>
 
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                <Link to="/" color="inherit" style={{ textDecoration: 'none' }}>
+                <Link to="/" style={{ textDecoration: 'none', color:"white" }}>
                     The Muisic Store
                 </Link>
             </Typography>
@@ -32,7 +32,6 @@ function Navbar() {
                 <Button variant="outlined" color="inherit" component={Link} to="/category/Cuerda">Cuerda</Button>
                 <Button variant="outlined" color="inherit" component={Link} to="/category/Viento">Viento</Button>
                 <Button variant="outlined" color="inherit" component={Link} to="/category/Percucion">Percucion</Button>
-                <Button variant="contained" color="primary">Login</Button>
             </Stack>
 
         </Toolbar>

@@ -8,24 +8,15 @@ const CartWidget = () => {
   return (
     <div>
     <Link to="/compra" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <Badge 
-        badgeContent={4} 
-        color="primary"
-        anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-          }}
-        >
-            <Icon
-                size="large"
-                edge="start"
-                aria-label="menu"
-                color='inherit'
-                sx={{ mr: 2 }}
-            >
-                <ShoppingCartOutlinedIcon />
-            </Icon>
-        </Badge>
+          <Icon
+            size="large"
+            edge="start"
+            aria-label="menu"
+            color='inherit'
+            sx={{ mr: 2 }}
+          >
+            <ShoppingCartOutlinedIcon />
+          </Icon>
         </Link>
     </div>
   )
