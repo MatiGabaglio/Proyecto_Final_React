@@ -6,13 +6,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const ItemCard = ( {items} ) => {
+const ItemCard = ( {data} ) => {
   return (
     <Card sx={{ maxWidth: 345, Height: 400 }}>
       <CardMedia
         sx={{ height: 240 }}
-        image={items.image}
-        title={items.title}
+        image={data.img}
+        title={data.Titulo}
       />
       <CardContent>
         <Typography 
@@ -21,7 +21,7 @@ const ItemCard = ( {items} ) => {
           component="div" 
           textAlign={'left'}
         >
-            {items.title}
+            {data.Titulo}
         </Typography>
 
         <Typography 
@@ -29,16 +29,15 @@ const ItemCard = ( {items} ) => {
           color="text.secondary" 
           textAlign={'left'} 
         >
-          {items.category}
+          {data.Tipo}
         </Typography>
         
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Saber mas</Button>
       </CardActions>
     </Card>
   );
 }
 
-export default ItemCard;3
+export default ItemCard;

@@ -1,25 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
 import ItemCard from '../ItemCard/ItemCard.jsx';
 import "./itemList.css"
 import { Link } from 'react-router-dom';
+import { db } from '../../Firebase/FirebaseConfig.js'
+import { collection, query, getDocs } from 'firebase/firestore';
 
 const ItemList = () => {
-    const [items, setItems] = useState([]);
+    const [Items, setItems] = useState([]);
 
     useEffect(() => {
-        axios('https://fakestoreapi.com/products').then((json) =>
-            setItems(json.data)
-        );
+      const getItems = async () => {
+        const q = query(collection(db, "Items"));
+        const docs = []
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          docs.push({...doc.data(), id: doc.id})
+        });
+        console.log(docs); 
+        setItems(docs);
+      }
+    getItems();
     },[])
 
     return (
-        <div className='Item_list itemListContainer'>
-          {items.map((item) => {
+        <div className='Item_list'>
+          {Items.map((item) => {
             return (
               <div key={item.id}>
-                <Link to={`detail/${item.id}`}>
-                  <ItemCard items={item} />
+                <Link to={`detail/${item.id}`} style={{ textDecoration: 'none' }}>
+                  <ItemCard data={item} />
                 </Link>
               </div>
             )

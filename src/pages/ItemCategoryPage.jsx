@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import ItemCard from '../components/ItemCard/ItemCard.jsx';
-import '../components/ItemList/itemList.css';
 import { Link, useParams } from 'react-router-dom';
+import { db } from '../Firebase/FirebaseConfig.js'
+import { collection, query, getDocs, where } from 'firebase/firestore';  
+import "../components/ItemList/itemList.css"
 
 function ItemCategoryPage() {
   const { categoryId } = useParams();
-  const [items, setItems] = useState([]);
+  const [Items, setItems] = useState([]);
 
-    useEffect(() => {
-      axios(`https://fakestoreapi.com/products/category/${categoryId}`).then((json) =>
-          setItems(json.data)
-      );
-  }, [categoryId]);
+  useEffect(() => {
+    const getItems = async () => {
+      const q = query(collection(db, "Items"), where("Tipo", "==", categoryId));
+      const docs = []
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({...doc.data(), id: doc.id})
+      });
+      setItems(docs);
+    }
+  getItems();
+  },[categoryId])
 
   return (
-    <div className='Item_list itemListContainer'>
-    {items.map((item) => {
+    <div className='Item_list'>
+    {Items.map((item) => {
       return (
         <div key={item.id}>
           <Link to={`/detail/${item.id}`}>
-            <ItemCard items={item} />
+            <ItemCard data={item} />
           </Link>
         </div>
       )
