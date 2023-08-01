@@ -2,26 +2,13 @@ import React from "react";
 import ListCartCard from "../components/ListCartCard/ListCartCard";
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import { db } from '../Firebase/FirebaseConfig.js'; 
-import { collection, addDoc } from "firebase/firestore";
+
+import { Link } from "react-router-dom";
 
 function CartPage() {
     const cancelarCompra = () => {
         localStorage.removeItem('carrito'); // Elimina todo el contenido del LocalStorage con la clave "carrito"
         alert('Compra cancelada. El carrito se ha vaciado.');
-      };
-
-    const enviarCompraAFirestore = async () => {
-        const carritoActual = JSON.parse(localStorage.getItem('carrito')) || [];
-        try {
-            const docRef = await addDoc(collection(db, "compras"), {
-            productos: carritoActual
-          });
-            alert("La compra se ha enviado correctamente a Firestore. El ID de tu compra es: " + docRef.id);
-            localStorage.removeItem('carrito');
-        } catch (error) {
-            console.error('Error al enviar los datos a Firestore:', error);
-        }
       };
 
     return <div>
@@ -31,7 +18,7 @@ function CartPage() {
             Cancelar compra
           </ Button>
 
-          <Button variant="outlined" color="success" onClick={enviarCompraAFirestore} sx={{margin:"10px"}}>
+          <Button variant="outlined" color="success" sx={{margin:"10px"}} component={Link} to="/infousuario">
             Finalizar compra
           </ Button>
         </Box>
